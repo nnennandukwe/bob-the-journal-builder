@@ -7,6 +7,7 @@ welcome_msg = [
 'Here are your command options below:',
 'type \'bob adds\' to begin a new notes entry for the day',
 'type \'bob lists\' for a list of all journal entries',
+'type \'bob deletes\' to decide which notes to throw away',
 'type \'exit\' to leave bob'
 ]
 
@@ -56,12 +57,17 @@ def bob_lists():
 			idx += 1
 	choose()
 
+def bob_deletes():
+	print('Deleting notes now...')
+
 def choose():
 	waiting = input('what will bob do for you today? ')
 	if waiting == 'bob adds':
 		bob_adds()
 	elif waiting == 'bob lists':
 		bob_lists()
+	elif waiting == 'bob deletes':
+		bob_deletes()
 	elif waiting == 'exit':
 		exit()
 	else:
